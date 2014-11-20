@@ -29,6 +29,8 @@ public class NameandID {
             for (String n1 : n) {
                 Name += n1;
             }
+        }else{
+            Name = name;
         }
         System.out.print("Enter ID : ");
         String id = scan.nextLine();
@@ -37,6 +39,8 @@ public class NameandID {
             for (String n1 : n) {
                 ID += n1;
             }
+        }else{
+            ID = id;
         }
         while (okay) {
             System.out.print("Enter length : ");
