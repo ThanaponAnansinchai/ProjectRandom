@@ -53,20 +53,6 @@ public class NameandID {
         }
         System.out.print("Enter amount password : ");
         amount = scan.nextInt();
-        System.out.println("Choose type password : ");
-        System.out.println("1.Character only");
-        System.out.println("2.Number    only");
-        System.out.println("3.Character and Number");
-
-        do {
-            System.out.print("Do you want type : ");
-            type = scan.nextInt();
-            if (0 < type && type < 4) {
-                break;
-            } else {
-                System.out.println("Please choose type password again.");
-            }
-        } while (true);
         this.compilePass();
     }
 
@@ -74,18 +60,14 @@ public class NameandID {
         GenIndex gi = new GenIndex(Name,ID,amount);
         for(int count = 0;count < amount ;count++){
             for(int l = 0;l < length;l++){
-                if(type == 1){
-                    gi.randomChar(count);
-                }else if(type == 2){
-                    gi.randomNo(count);
-                }else{
+
                     int r = (int) (Math.random() * 10) % 2;
                     if(r == 0){
                         gi.randomChar(count);
                     }else{
                         gi.randomNo(count);
                     }
-                }
+                
             }
         }
         gi.output(amount);
